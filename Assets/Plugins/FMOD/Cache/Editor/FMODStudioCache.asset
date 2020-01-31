@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8328732379934021008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: BuildFMOD/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637161073867921686
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-8265457405874086082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/SFX/Test_2D_Sound
+  m_EditorClassIdentifier: 
+  Path: event:/SD/SFX/Test_2D_Sound
+  guid: e6c1e0973686d94d85af105d5a020cc0
+  Banks:
+  - {fileID: -8328732379934021008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 992
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8374375067591320773}
+  - {fileID: -8328732379934021008}
+  EditorEvents:
+  - {fileID: 7621959941395983436}
+  - {fileID: -8265457405874086082}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -8328732379934021008}
+  StringsBanks:
+  - {fileID: 8374375067591320773}
+  stringsBankWriteTime: 637161073867981862
+  cacheVersion: 3
+--- !u!114 &7621959941395983436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/SFX/Test_3D_Sound
+  m_EditorClassIdentifier: 
+  Path: event:/SD/SFX/Test_3D_Sound
+  guid: 98ded64e3378a449b5b423551b481bd6
+  Banks:
+  - {fileID: -8328732379934021008}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1227
+--- !u!114 &8374375067591320773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.strings.bank
+  m_EditorClassIdentifier: 
+  Path: BuildFMOD/Desktop/Master Bank.strings.bank
+  SubDir: 
+  lastModified: 637161073867981862
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1054
+  - Name: Mobile
+    Value: 1054
+  Exists: 1
