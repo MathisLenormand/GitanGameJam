@@ -13,11 +13,11 @@ public class Responsive : MonoBehaviour
     {
         Rect screenRect = Camera.main.pixelRect;
 
-        Vector3 tempTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(screenRect.xMin, screenRect.yMin, 0));
+        Vector3 tempTopLeft = Camera.main.ScreenToWorldPoint(new Vector3(screenRect.xMax, screenRect.yMax, 0));
         tempTopLeft.z = 0;
         topLeft.Value = tempTopLeft;
 
-        Vector3 tempBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(screenRect.xMax, screenRect.yMax, 0));
+        Vector3 tempBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(screenRect.xMin, screenRect.yMin, 0));
         tempBottomRight.z = 0;
 
         bottomRight.Value = tempBottomRight;
