@@ -50,19 +50,7 @@ public class RepairBoy : MobileObjects
 
     protected void DoActionNormal()
     {
-        AddForce(waterEnviro.Gravity);
-
-        Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-
-        if (screenPosition.x <= 0 || screenPosition.x >= Camera.main.pixelWidth)
-        {
-            SetModeStuck();
-        }
-
-        if (screenPosition.y < 0 || screenPosition.y > Camera.main.pixelHeight)
-        {
-            SetModeStuck();
-        }
+        AddForce(waterEnviro.Gravity * Time.deltaTime);
 
         Move();
     }
@@ -75,7 +63,7 @@ public class RepairBoy : MobileObjects
 
         currentState = _stuckState;
 
-        Debug.Log("STUCK");
+        ResetForce();
     }
 
     protected void DoActionStuck()
@@ -84,6 +72,14 @@ public class RepairBoy : MobileObjects
     }
     #endregion
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (currentState == _normalState && collision.CompareTag("Borders"))
+        {
+            SetModeStuck();
+        }
+    }
+
     protected void Update()
     {
         doAction();
@@ -91,6 +87,9 @@ public class RepairBoy : MobileObjects
 
     public void SwipeReaction (Vector3 swipe)
     {
+        if (currentState == _stuckState)
+            SetModeNormal();
+
         if (normalizeSwipe)
             AddForce(swipe.normalized * currentEnviro.DashPower, true);
         else

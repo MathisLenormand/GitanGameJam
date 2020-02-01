@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 845309164}
   - component: {fileID: 845309165}
   - component: {fileID: 845309166}
+  - component: {fileID: 2211515531733130318}
   m_Layer: 0
   m_Name: RepairBoy
   m_TagString: Untagged
@@ -99,12 +100,14 @@ MonoBehaviour:
   airEnviro: {fileID: 11400000, guid: 96a56d009e09364468861d20a0e67649, type: 2}
   waterEnviro: {fileID: 11400000, guid: a7ff0be0b59228246ba590c27ea38f60, type: 2}
   mass: 1
-  touchPosition:
+  _touchPosition:
     _useConstant: 0
     _constantValue: {x: 0, y: 0, z: 0}
     _variable: {fileID: 11400000, guid: 7f96244521cb7784dbbdc2fc386da89b, type: 2}
-  swipeEvent: {fileID: 11400000, guid: e88100f363914a541a795a3d887e40b1, type: 2}
+  _swipeEvent: {fileID: 11400000, guid: e88100f363914a541a795a3d887e40b1, type: 2}
   normalizeSwipe: 1
+  _normalState: {fileID: 11400000, guid: 7b12e80b66bc019478637ab99bc8b21e, type: 2}
+  _stuckState: {fileID: 11400000, guid: 949de37b1752ac04d92f951803f03b7f, type: 2}
 --- !u!114 &845309165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +157,28 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
+--- !u!50 &2211515531733130318
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959899153314277946}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6959899153414164675
 GameObject:
   m_ObjectHideFlags: 0
