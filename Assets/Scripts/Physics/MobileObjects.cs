@@ -30,9 +30,9 @@ public class MobileObjects : MonoBehaviour
     {
         velocity += acceleration;
 
-        velocity *= currentEnviro.Friction;
+        velocity *= (currentEnviro.Friction * Time.deltaTime); 
 
-        transform.position += velocity * Time.deltaTime;
+        transform.position += velocity;
     }
 
     public void AddForce (Vector3 forceToAdd, bool resetForces = false)
@@ -40,7 +40,7 @@ public class MobileObjects : MonoBehaviour
         if (resetForces)
             ResetForce();
 
-        acceleration += forceToAdd * Time.deltaTime;
+        acceleration += forceToAdd;
     }
 
     public void ResetForce ()

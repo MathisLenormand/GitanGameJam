@@ -7,10 +7,12 @@ using System;
 public class RepairBoy : MobileObjects
 {
     [Header("Controls")]
-    [SerializeField] private Vector3Reference _touchPosition;
     [SerializeField] private Vector3GameEvent _swipeEvent;
 
     [SerializeField] private bool normalizeSwipe;
+
+    [Header("Collision")]
+    [SerializeField] private LayerMask bordersLayer;
 
     [Header("States")]
     [SerializeField] private PlayerStateParameters _normalState;
@@ -154,10 +156,10 @@ public class RepairBoy : MobileObjects
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (currentState == _normalState && collision.CompareTag("Borders"))
+        /*if (currentState == _normalState && collision.CompareTag("Borders"))
         {
             SetModeStuck();
-        }
+        }*/
     }
 
     override protected void Update()
@@ -165,6 +167,15 @@ public class RepairBoy : MobileObjects
         base.Update();
 
         doAction();
+
+        Debug.Log(velocity.magnitude);
+
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, transform.localScale.x / 2, velocity.normalized, 0.3f, bordersLayer);
+
+        if (hit)
+        {
+            SetModeStuck();
+        }
     }
 
     public void SwipeReaction (Vector3 swipe)
@@ -172,9 +183,9 @@ public class RepairBoy : MobileObjects
         if (currentState == _stuckState)
             SetModeNormal();
 
-        if (normalizeSwipe)
-            AddForce(swipe.normalized * currentEnviro.DashPower, true);
-        else
-            AddForce(swipe * currentEnviro.DashPower, true);
+        AddForce(swipe.normalized * currentEnviro.DashPower, true);
+
+        // Si on veut faire demi tour pour que la taille du swipe ait une importance
+        //AddForce(swipe * currentEnviro.DashPower, true);
     }
 }
