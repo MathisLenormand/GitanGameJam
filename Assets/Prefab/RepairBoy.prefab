@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2211515531733130318}
   m_Layer: 0
   m_Name: RepairBoy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6959899153314277946}
   m_LocalRotation: {x: 0, y: 0, z: -0.13683924, w: 0.99059325}
   m_LocalPosition: {x: -0.92, y: 0.35, z: 1.91}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6959899153414164796}
   - {fileID: 6959899154225780065}
