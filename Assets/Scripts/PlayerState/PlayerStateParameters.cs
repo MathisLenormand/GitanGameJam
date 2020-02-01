@@ -1,0 +1,10 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "new state", menuName = "RepairBoy/States", order = 0)]
+public class PlayerStateParameters : ScriptableObject
+{
+    [SerializeField] private string _name;
+    public string Name { get { return _name; } }
+}
