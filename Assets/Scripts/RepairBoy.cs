@@ -35,6 +35,10 @@ public class RepairBoy : MobileObjects
 
     private Material bodyMaterial;
 
+    [Header("Dash")]
+    [SerializeField] private float dashNumbers = 2;
+    private float currentDashNumber = 0;
+
     private float _currentMatter = 1f;
     public float CurrentMatter { 
         get { return _currentMatter; } 
@@ -121,6 +125,8 @@ public class RepairBoy : MobileObjects
         currentState = _stuckState;
 
         ResetForce();
+
+        currentDashNumber = 0;
     }
 
     protected void DoActionStuck()
@@ -154,14 +160,6 @@ public class RepairBoy : MobileObjects
         bodyMaterial.SetFloat("Amount", value);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        /*if (currentState == _normalState && collision.CompareTag("Borders"))
-        {
-            SetModeStuck();
-        }*/
-    }
-
     override protected void Update()
     {
         base.Update();
@@ -180,10 +178,15 @@ public class RepairBoy : MobileObjects
 
     public void SwipeReaction (Vector3 swipe)
     {
+        if (currentDashNumber >= dashNumbers)
+            return;
+
         if (currentState == _stuckState)
             SetModeNormal();
 
         AddForce(swipe.normalized * currentEnviro.DashPower, true);
+
+        currentDashNumber++;
 
         // Si on veut faire demi tour pour que la taille du swipe ait une importance
         //AddForce(swipe * currentEnviro.DashPower, true);
