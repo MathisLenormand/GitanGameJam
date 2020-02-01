@@ -58,3 +58,10 @@
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Voice_Son_3D', format=2, channels=2, frequency=48000, lengthbytes=12032, lengthpcm=58932, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
 [LOG] SoundI::release                          :  (000001A44EC26CA8)
 [LOG] SoundI::release                          :     Voice_Son_3D (000001A44BA02408)
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
