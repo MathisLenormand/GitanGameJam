@@ -9,6 +9,7 @@ public class MobileObjects : MonoBehaviour
     [SerializeField] protected EnvironmentParameters airEnviro;
     [SerializeField] protected EnvironmentParameters waterEnviro;
     protected EnvironmentParameters currentEnviro;
+    protected EnvironmentParameters lastEnviro;
 
     [SerializeField] private FloatReference waterHeight;
 
