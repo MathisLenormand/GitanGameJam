@@ -17,15 +17,18 @@ public class Responsive : MonoBehaviour
         tempTopLeft.z = 0;
         topLeft.Value = tempTopLeft;
 
-        Vector3 tempBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(screenRect.xMin, screenRect.yMax, 0));
+        Vector3 tempBottomRight = Camera.main.ScreenToWorldPoint(new Vector3(screenRect.xMax, screenRect.yMax, 0));
         tempBottomRight.z = 0;
 
         bottomRight.Value = tempBottomRight;
     }
 
-    []
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
-        
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(topLeft.Value, 0.5f);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(bottomRight.Value, 0.5f);
     }
 }
