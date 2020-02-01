@@ -105,7 +105,7 @@ public class RepairBoy : MobileObjects
 
     protected void DoActionNormal()
     {
-        AddForce(waterEnviro.Gravity * Time.deltaTime);
+        AddForce(currentEnviro.Gravity * Time.deltaTime);
 
         Move();
     }
@@ -160,8 +160,10 @@ public class RepairBoy : MobileObjects
         }
     }
 
-    protected void Update()
+    override protected void Update()
     {
+        base.Update();
+
         doAction();
     }
 

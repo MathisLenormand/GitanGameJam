@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ScriptableObjectArchitecture;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class MobileObjects : MonoBehaviour
     [SerializeField] protected EnvironmentParameters waterEnviro;
     protected EnvironmentParameters currentEnviro;
 
+    [SerializeField] private FloatReference waterHeight;
+
     [Header("Physics")]
     [SerializeField] protected float mass = 1f;
     protected Vector3 acceleration = new Vector3();
@@ -17,6 +20,11 @@ public class MobileObjects : MonoBehaviour
     virtual protected void Start()
     {
         currentEnviro = waterEnviro;
+    }
+
+    virtual protected void Update()
+    {
+        currentEnviro = transform.position.y <= waterHeight.Value ? waterEnviro : airEnviro;
     }
 
     public void Move ()

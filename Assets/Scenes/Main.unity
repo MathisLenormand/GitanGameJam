@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: dangerCurve.m_Curve.Array.data[0].value
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: waterHeight._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: b2079a5831dc50b498d5559baa75263f,
+        type: 2}
     - target: {fileID: 6959899153314277942, guid: 27b729f3f7f243d448172b6947361208,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,7 +482,7 @@ GameObject:
   - component: {fileID: 928142244}
   - component: {fileID: 928142243}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,6 +508,10 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: 2975d63534f8895499ff3a369947cc47, type: 2}
+  _waterHeightRelative:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: b2079a5831dc50b498d5559baa75263f, type: 2}
   _screenWidth:
     _useConstant: 0
     _constantValue: 0
@@ -763,6 +772,23 @@ PrefabInstance:
         type: 3}
       propertyPath: mattervalue
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918608136917612002, guid: b9459ba4cb99ffd40be3f1812020c0b2,
+        type: 3}
+      propertyPath: _waterHeight._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: b2079a5831dc50b498d5559baa75263f,
+        type: 2}
+    - target: {fileID: 5918608136917612002, guid: b9459ba4cb99ffd40be3f1812020c0b2,
+        type: 3}
+      propertyPath: _waterLevel._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: e3ebdf9bbf87e9042a5d2f75b1168a93,
+        type: 2}
+    - target: {fileID: 5918608136917612002, guid: b9459ba4cb99ffd40be3f1812020c0b2,
+        type: 3}
+      propertyPath: waterLossPerSeconds
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9459ba4cb99ffd40be3f1812020c0b2, type: 3}

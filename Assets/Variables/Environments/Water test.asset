@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e66dc1f12858ce49ab627727a8a9388, type: 3}
   m_Name: Water test
   m_EditorClassIdentifier: 
-  _friction: 0.8
+  _friction: 0.7
   _gravity: {x: 0, y: 0, z: 0}
   _dashPower: 100

@@ -1,20 +1,23 @@
-﻿using System.Collections;
+﻿using ScriptableObjectArchitecture;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CodePourFaireFonctionnerLaBreche : MonoBehaviour
 {
-    public float mattervalue;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float mattervalue;
+    [SerializeField] private float waterLossPerSeconds = 0.01f;
+    [SerializeField] private FloatReference _waterHeight;
+    [SerializeField] private FloatReference _waterLevel;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _waterLevel.Value -= waterLossPerSeconds * Time.deltaTime;
+
+        if (transform.position.y > _waterHeight.Value)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

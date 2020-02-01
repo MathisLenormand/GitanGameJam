@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e66dc1f12858ce49ab627727a8a9388, type: 3}
-  m_Name: Air
+  m_Script: {fileID: 11500000, guid: f9377ffeb64ba30478a995a8ffc78ae8, type: 3}
+  m_Name: WaterHeightRelative
   m_EditorClassIdentifier: 
-  _friction: 0.95
-  _gravity: {x: 0, y: -100, z: 0}
-  _dashPower: 10
+  DeveloperDescription:
+    _value: 
+  _value: 0
+  _readOnly: 0
+  _raiseWarning: 1
+  _isClamped: 0
+  _minClampedValue: 0
+  _maxClampedValue: 0
