@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e66dc1f12858ce49ab627727a8a9388, type: 3}
-  m_Name: Water
+  m_Script: {fileID: 11500000, guid: df22fd6ba37b78f4cab663c65426c8c0, type: 3}
+  m_Name: Normal
   m_EditorClassIdentifier: 
-  _friction: 0.9
-  _dashPower: 30
-  _gravity: {x: 0, y: 0, z: 0}
+  _name: Normal

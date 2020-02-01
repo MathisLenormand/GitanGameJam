@@ -14,15 +14,13 @@ public class MobileObjects : MonoBehaviour
     protected Vector3 acceleration = new Vector3();
     protected Vector3 velocity = new Vector3();
 
-    protected void Start()
+    virtual protected void Start()
     {
         currentEnviro = waterEnviro;
     }
 
-    protected void Update()
+    public void Move ()
     {
-        AddForce(currentEnviro.Gravity);
-
         velocity += acceleration;
 
         velocity *= currentEnviro.Friction;
@@ -30,11 +28,17 @@ public class MobileObjects : MonoBehaviour
         transform.position += velocity * Time.deltaTime;
     }
 
-    public void AddForce (Vector3 forceToAdd, bool resetForces)
+    public void AddForce (Vector3 forceToAdd, bool resetForces = false)
     {
         if (resetForces)
-            acceleration = new Vector3();
+            ResetForce();
 
         acceleration += forceToAdd * Time.deltaTime;
+    }
+
+    public void ResetForce ()
+    {
+        acceleration = new Vector3();
+        velocity = new Vector3();
     }
 }
