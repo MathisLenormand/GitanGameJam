@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using ScriptableObjectArchitecture;
 
-public class RepairBoy : MonoBehaviour
+public class RepairBoy : MobileObjects
 {
+    [Header("Controls")]
     [SerializeField] Vector3Reference touchPosition;
+    [SerializeField] Vector3GameEvent swipeEvent;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SwipeReaction (Vector3 swipe)
     {
-        
-    }
+        Debug.Log(swipe);
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.touchCount > 0)
-        {
-            transform.position = touchPosition.Value;
-        }
+        AddForce(swipe.normalized * currentEnviro.DashPower, true);
     }
 }
