@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Air
   m_EditorClassIdentifier: 
   _friction: 0.85
-  _gravity: {x: 0, y: -7, z: 0}
+  _gravity: {x: 0, y: -10, z: 0}
   _dashPower: 2

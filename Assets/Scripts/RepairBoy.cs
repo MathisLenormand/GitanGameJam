@@ -39,6 +39,14 @@ public class RepairBoy : MobileObjects
     [SerializeField] private float dashNumbers = 2;
     private float currentDashNumber = 0;
 
+    //[Header("Asphyxie")]
+    //[SerializeField] private float timeBeforeAsphyxie = 7f;
+    //private float currentTimeBeforeAsphyxie = 0;
+
+    [Header("Stuck State Parameters")]
+    [SerializeField] private float timeBeforeRelease = 2f;
+    private float currentTimeBeforeRelease = 0f;
+
     private float _currentMatter = 1f;
     public float CurrentMatter { 
         get { return _currentMatter; } 
@@ -127,11 +135,16 @@ public class RepairBoy : MobileObjects
         ResetForce();
 
         currentDashNumber = 0;
+
+        currentTimeBeforeRelease = 0;
     }
 
     protected void DoActionStuck()
     {
+        if (currentTimeBeforeRelease >= timeBeforeRelease)
+            SetModeNormal();
 
+        currentTimeBeforeRelease += Time.deltaTime;
     }
     #endregion
 
@@ -166,9 +179,7 @@ public class RepairBoy : MobileObjects
 
         doAction();
 
-        Debug.Log(velocity.magnitude);
-
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, transform.localScale.x / 2, velocity.normalized, 0.3f, bordersLayer);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, transform.localScale.x / 2, velocity.normalized, velocity.magnitude, bordersLayer);
 
         if (hit)
         {
@@ -179,6 +190,13 @@ public class RepairBoy : MobileObjects
     public void SwipeReaction (Vector3 swipe)
     {
         if (currentDashNumber >= dashNumbers)
+            return;
+
+        Vector3 dash = swipe.normalized * currentEnviro.DashPower;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dash.normalized, transform.localScale.x + dash.magnitude * Time.deltaTime, bordersLayer);
+
+        if (hit)
             return;
 
         if (currentState == _stuckState)

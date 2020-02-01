@@ -178,6 +178,66 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &519733660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 519733661}
+  - component: {fileID: 519733662}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &519733661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519733660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.37308976, y: 0.4221065, z: -0.2705441}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519733662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519733660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae283302a9373594d96777424314b812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topLeft:
+    _useConstant: 0
+    _constantValue: {x: 0, y: 0, z: 0}
+    _variable: {fileID: 11400000, guid: 5aabb833da3a48e43b242770584642f8, type: 2}
+  bottomRight:
+    _useConstant: 0
+    _constantValue: {x: 0, y: 0, z: 0}
+    _variable: {fileID: 11400000, guid: 2433c75e5e229914181322230e2fd09d, type: 2}
+  screenWidth:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 4ed880252d3e3d8468b4b564cfabfd20, type: 2}
+  screenHeight:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: dd27b079064aa6b4788e92b98278b84c, type: 2}
+  _timeBetweenSpawn: 1
 --- !u!1001 &619216947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -740,7 +800,7 @@ PrefabInstance:
     - target: {fileID: 5918608136917612001, guid: b9459ba4cb99ffd40be3f1812020c0b2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.31
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 5918608136917612001, guid: b9459ba4cb99ffd40be3f1812020c0b2,
         type: 3}
