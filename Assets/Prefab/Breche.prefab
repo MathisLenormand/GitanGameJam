@@ -124,6 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e94a35036f9a44491b8897086047ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mattervalue: 1
+  waterLossPerSeconds: 0.01
+  _waterHeight:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: b2079a5831dc50b498d5559baa75263f, type: 2}
+  _waterLevel:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: e3ebdf9bbf87e9042a5d2f75b1168a93, type: 2}
 --- !u!50 &5918608136917612006
 Rigidbody2D:
   serializedVersion: 4
@@ -215,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 7983079984871223814, guid: ce12bf78802d5ec4fa5b29f6e1c9b98d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce12bf78802d5ec4fa5b29f6e1c9b98d, type: 3}

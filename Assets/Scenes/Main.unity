@@ -185,20 +185,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
-      propertyPath: waterEnviro
-      value: 
-      objectReference: {fileID: 11400000, guid: 6fccd0bd79ac0dd45b45a59b63db50df,
-        type: 2}
-    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
-      propertyPath: dangerCurve.m_Curve.Array.data[0].value
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
-      propertyPath: waterHeight._variable
-      value: 
-      objectReference: {fileID: 11400000, guid: b2079a5831dc50b498d5559baa75263f,
-        type: 2}
     - target: {fileID: 6959899153314277942, guid: 27b729f3f7f243d448172b6947361208,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -703,11 +689,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4389468453023232712, guid: b9459ba4cb99ffd40be3f1812020c0b2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5918608136917611997, guid: b9459ba4cb99ffd40be3f1812020c0b2,
         type: 3}
       propertyPath: m_Name
@@ -716,12 +697,12 @@ PrefabInstance:
     - target: {fileID: 5918608136917612001, guid: b9459ba4cb99ffd40be3f1812020c0b2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.26
+      value: -2.83
       objectReference: {fileID: 0}
     - target: {fileID: 5918608136917612001, guid: b9459ba4cb99ffd40be3f1812020c0b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 5918608136917612001, guid: b9459ba4cb99ffd40be3f1812020c0b2,
         type: 3}
@@ -767,28 +748,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5918608136917612002, guid: b9459ba4cb99ffd40be3f1812020c0b2,
-        type: 3}
-      propertyPath: mattervalue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5918608136917612002, guid: b9459ba4cb99ffd40be3f1812020c0b2,
-        type: 3}
-      propertyPath: _waterHeight._variable
-      value: 
-      objectReference: {fileID: 11400000, guid: b2079a5831dc50b498d5559baa75263f,
-        type: 2}
-    - target: {fileID: 5918608136917612002, guid: b9459ba4cb99ffd40be3f1812020c0b2,
-        type: 3}
-      propertyPath: _waterLevel._variable
-      value: 
-      objectReference: {fileID: 11400000, guid: e3ebdf9bbf87e9042a5d2f75b1168a93,
-        type: 2}
-    - target: {fileID: 5918608136917612002, guid: b9459ba4cb99ffd40be3f1812020c0b2,
-        type: 3}
-      propertyPath: waterLossPerSeconds
-      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9459ba4cb99ffd40be3f1812020c0b2, type: 3}
@@ -864,12 +823,12 @@ PrefabInstance:
     - target: {fileID: 6001025181973131772, guid: dc3e7edc5744ff445a98f8622948d66c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 6001025181973131772, guid: dc3e7edc5744ff445a98f8622948d66c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.386
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 6001025181973131772, guid: dc3e7edc5744ff445a98f8622948d66c,
         type: 3}
@@ -915,21 +874,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001025181973131772, guid: dc3e7edc5744ff445a98f8622948d66c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001025181973131772, guid: dc3e7edc5744ff445a98f8622948d66c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001025181973131772, guid: dc3e7edc5744ff445a98f8622948d66c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc3e7edc5744ff445a98f8622948d66c, type: 3}

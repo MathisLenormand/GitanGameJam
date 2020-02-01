@@ -12,8 +12,6 @@ public class MobileObjects : MonoBehaviour
 
     [SerializeField] private FloatReference waterHeight;
 
-    [Header("Physics")]
-    [SerializeField] protected float mass = 1f;
     protected Vector3 acceleration = new Vector3();
     protected Vector3 velocity = new Vector3();
 

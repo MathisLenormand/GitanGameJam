@@ -100,7 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airEnviro: {fileID: 11400000, guid: 96a56d009e09364468861d20a0e67649, type: 2}
   waterEnviro: {fileID: 11400000, guid: a7ff0be0b59228246ba590c27ea38f60, type: 2}
-  mass: 1
+  waterHeight:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: b2079a5831dc50b498d5559baa75263f, type: 2}
   _touchPosition:
     _useConstant: 0
     _constantValue: {x: 0, y: 0, z: 0}
@@ -126,7 +129,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 2
+      value: 1.5
       inSlope: 1
       outSlope: 1
       tangentMode: 0
@@ -161,7 +164,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   START_DANGER_MATTER: 2
-  bodyMaterial: {fileID: 2100000, guid: f798c0b619cd9d94a87fda6c6fbc28c4, type: 2}
 --- !u!114 &845309165
 MonoBehaviour:
   m_ObjectHideFlags: 0
