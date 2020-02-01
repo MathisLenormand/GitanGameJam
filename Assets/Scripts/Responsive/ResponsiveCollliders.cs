@@ -12,24 +12,21 @@ public class ResponsiveCollliders : MonoBehaviour
     [SerializeField] private BoxCollider2D right;
 
     [Header("Screens infos")]
-    [SerializeField] private Vector3Reference topLeft;
-    [SerializeField] private Vector3Reference bottomRight;
+    [SerializeField] private FloatReference width;
+    [SerializeField] private FloatReference height;
 
     public void SetColliders ()
     {
-        float width = topLeft.Value.x - bottomRight.Value.x;
-        float height = topLeft.Value.y - bottomRight.Value.y;
+        top.offset = new Vector2(0, height.Value / 2 + 0.5f);
+        top.size = new Vector2(width.Value, 1);
 
-        top.offset = new Vector2(0, height / 2 + 0.5f);
-        top.size = new Vector2(width, 1);
+        bottom.offset = new Vector2(0, -height.Value / 2 - 0.5f);
+        bottom.size = new Vector2(width.Value, 1);
 
-        bottom.offset = new Vector2(0, -height / 2 - 0.5f);
-        bottom.size = new Vector2(width, 1);
+        right.offset = new Vector2(width.Value / 2 + 0.5f, 0);
+        right.size = new Vector2(1, height.Value);
 
-        right.offset = new Vector2(width / 2 + 0.5f, 0);
-        right.size = new Vector2(1, height);
-
-        left.offset = new Vector2(-width / 2 - 0.5f, 0);
-        left.size = new Vector2(1, height);
+        left.offset = new Vector2(-width.Value / 2 - 0.5f, 0);
+        left.size = new Vector2(1, height.Value);
     }
 }

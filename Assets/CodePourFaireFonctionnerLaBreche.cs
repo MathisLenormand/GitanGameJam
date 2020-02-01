@@ -24,6 +24,8 @@ public class CodePourFaireFonctionnerLaBreche : MonoBehaviour
         {
             //collision.gameObject.GetComponent<RepairBoy>().matterlevel += mattervalue;
             Destroy(gameObject);
+
+            collision.GetComponent<RepairBoy>().CurrentMatter -= mattervalue;
         }
     }
 }

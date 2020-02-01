@@ -7,6 +7,8 @@ public class Responsive : MonoBehaviour
 {
     [SerializeField] private Vector3Reference topLeft;
     [SerializeField] private Vector3Reference bottomRight;
+    [SerializeField] private FloatReference screenWidth;
+    [SerializeField] private FloatReference screenHeight;
 
     [SerializeField] private ResponsiveCollliders respCollider;
 
@@ -21,6 +23,9 @@ public class Responsive : MonoBehaviour
         tempBottomRight.z = 0;
 
         bottomRight.Value = tempBottomRight;
+
+        screenWidth.Value = topLeft.Value.x - bottomRight.Value.x;
+        screenHeight.Value = topLeft.Value.y - bottomRight.Value.y;
 
         respCollider.SetColliders();
     }

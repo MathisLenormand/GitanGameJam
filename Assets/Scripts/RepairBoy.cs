@@ -19,11 +19,66 @@ public class RepairBoy : MobileObjects
 
     private Action doAction;
 
+    [Header("Matter")]
+    [SerializeField] private float START_MATTER = 3f;
+    [SerializeField] private float MAX_MATTER = 5f;
+    [SerializeField] private float MIN_MATTER = 1f;
+    [SerializeField] private AnimationCurve matterScaleCurve;
+    private float deltaMatter = 0;
+
+    [Header("Danger Feedback")]
+    [SerializeField] private AnimationCurve dangerCurve;
+    [SerializeField] private float START_DANGER_MATTER = 2f;
+    private float deltaDangerMatter = 0;
+
+    private Material bodyMaterial;
+
+    private float _currentMatter = 1f;
+    public float CurrentMatter { 
+        get { return _currentMatter; } 
+        set
+        {
+            if (value < MIN_MATTER)
+            {
+                Debug.Log("Death");
+            }
+
+            _currentMatter = Mathf.Clamp(value, MIN_MATTER, MAX_MATTER);
+
+            ScalePlayerDependingOfMatter();
+
+            if (value <= START_DANGER_MATTER)
+            {
+                SetDangerAmountDependingOfMatter();
+            }
+        }
+    }
+
+    [ContextMenu("DEBUG_Add1Matter")]
+    public void DEBUG_AddMatter()
+    {
+        CurrentMatter ++;
+    }
+
+    [ContextMenu("DEBUG_Remove1Matter")]
+    public void DEBUG_RemoveMatter()
+    {
+        CurrentMatter--;
+    }
+
     override protected void Start()
     {
         base.Start();
 
+        deltaMatter = MAX_MATTER - MIN_MATTER;
+
+        deltaDangerMatter = START_DANGER_MATTER - MIN_MATTER;
+
+        CurrentMatter = START_MATTER;
+
         SetModeNormal();
+
+        bodyMaterial = GetComponent<MeshRenderer>().material; 
     }
 
     #region Mode Void
@@ -71,6 +126,31 @@ public class RepairBoy : MobileObjects
 
     }
     #endregion
+
+    private void ScalePlayerDependingOfMatter ()
+    {
+        float ratio = (_currentMatter - MIN_MATTER) / deltaMatter;
+
+        float currentScale = matterScaleCurve.Evaluate(ratio);
+
+        transform.localScale = new Vector3(currentScale, currentScale, currentScale);
+    }
+
+    private void SetDangerAmountDependingOfMatter ()
+    {
+        float ratio = 1 - (_currentMatter - MIN_MATTER) / deltaDangerMatter;
+
+        float currentAmount = dangerCurve.Evaluate(ratio);
+
+        SetDangerFeedbackValue(currentAmount);
+    }
+
+    private void SetDangerFeedbackValue (float value)
+    {
+        // ça marche pas ???
+
+        bodyMaterial.SetFloat("Amount", value);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
