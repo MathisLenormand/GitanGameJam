@@ -15,21 +15,21 @@ public class ResponsiveCollliders : MonoBehaviour
     [SerializeField] private Vector3Reference topLeft;
     [SerializeField] private Vector3Reference bottomRight;
 
-    private void Start()
+    public void SetColliders ()
     {
         float width = topLeft.Value.x - bottomRight.Value.x;
         float height = topLeft.Value.y - bottomRight.Value.y;
 
         top.offset = new Vector2(0, height / 2 + 0.5f);
-        top.size = new Vector2(width , 1);
+        top.size = new Vector2(width, 1);
 
-        bottom.offset = new Vector2(0,- height / 2 - 0.5f);
+        bottom.offset = new Vector2(0, -height / 2 - 0.5f);
         bottom.size = new Vector2(width, 1);
 
         right.offset = new Vector2(width / 2 + 0.5f, 0);
         right.size = new Vector2(1, height);
 
-        left.offset = new Vector2(- width / 2 - 0.5f, 0);
+        left.offset = new Vector2(-width / 2 - 0.5f, 0);
         left.size = new Vector2(1, height);
     }
 }
