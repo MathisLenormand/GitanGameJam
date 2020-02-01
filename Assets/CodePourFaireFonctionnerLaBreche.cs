@@ -18,9 +18,12 @@ public class CodePourFaireFonctionnerLaBreche : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        Debug.Log("Salu");
+
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(this);
+            Destroy(gameObject);
+            Debug.Log("Sal2u");
         }
     }
 }
