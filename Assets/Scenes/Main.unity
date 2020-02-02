@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -601,6 +601,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
       propertyPath: bordersLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}
@@ -620,6 +624,58 @@ PrefabInstance:
     - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
       propertyPath: timeBeforeRelease
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[1].time
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[1].value
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[1].inSlope
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[1].outSlope
+      value: 149.56212
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[2].value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[2].inSlope
+      value: 218.02937
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[2].outSlope
+      value: 218.02937
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[2].inWeight
+      value: 0.1287979
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[1].tangentMode
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 845309164, guid: 27b729f3f7f243d448172b6947361208, type: 3}
+      propertyPath: dangerCurve.m_Curve.Array.data[1].outWeight
+      value: 0.11822984
       objectReference: {fileID: 0}
     - target: {fileID: 601977446976881866, guid: 27b729f3f7f243d448172b6947361208,
         type: 3}
@@ -2090,6 +2146,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7719547419417159456, guid: 266b3d6c76dfe104b8436764d5a14fb0,
+        type: 3}
+      propertyPath: breachOffset
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7719547419417159458, guid: 266b3d6c76dfe104b8436764d5a14fb0,
         type: 3}
       propertyPath: m_Name

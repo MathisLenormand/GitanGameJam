@@ -66,10 +66,7 @@ public class RepairBoy : MobileObjects
 
             ScalePlayerDependingOfMatter();
 
-            if (value <= START_DANGER_MATTER)
-            {
-                SetDangerAmountDependingOfMatter();
-            }
+            SetDangerAmountDependingOfMatter();
         }
     }
 
@@ -89,13 +86,13 @@ public class RepairBoy : MobileObjects
     {
         base.Start();
 
+        bodyMaterial = GetComponent<MeshRenderer>().material;
+
         deltaMatter = MAX_MATTER - MIN_MATTER;
 
         deltaDangerMatter = START_DANGER_MATTER - MIN_MATTER;
 
         CurrentMatter = START_MATTER;
-
-        bodyMaterial = GetComponent<MeshRenderer>().material;
 
         SetModeVoid();
     }
@@ -189,7 +186,7 @@ public class RepairBoy : MobileObjects
 
     private void SetDangerAmountDependingOfMatter ()
     {
-        float ratio = 1 - (_currentMatter - MIN_MATTER) / deltaDangerMatter;
+        float ratio = 1 - (_currentMatter - MIN_MATTER) / deltaMatter;
 
         float currentAmount = dangerCurve.Evaluate(ratio);
 
@@ -198,7 +195,7 @@ public class RepairBoy : MobileObjects
 
     private void SetDangerFeedbackValue (float value)
     {
-        bodyMaterial.SetFloat("Amount", value);
+        bodyMaterial.SetFloat("_Amount", value);
     }
 
     override protected void Update()
