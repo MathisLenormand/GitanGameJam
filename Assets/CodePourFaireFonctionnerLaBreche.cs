@@ -1,4 +1,4 @@
-﻿using ScriptableObjectArchitecture;
+using ScriptableObjectArchitecture;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +9,10 @@ public class CodePourFaireFonctionnerLaBreche : MonoBehaviour
     [SerializeField] private float waterLossPerSeconds = 0.01f;
     [SerializeField] private FloatReference _waterHeight;
     [SerializeField] private FloatReference _waterLevel;
+
+    [Header("Particules")]
+    [SerializeField] private GameObject sideParticleSystem;
+    [SerializeField] private GameObject bottomParticleSystem;
 
     private void Update()
     {
@@ -30,5 +34,15 @@ public class CodePourFaireFonctionnerLaBreche : MonoBehaviour
 
             collision.GetComponent<RepairBoy>().CurrentMatter -= mattervalue;
         }
+    }
+
+    public void ActivateSideParticles ()
+    {
+        sideParticleSystem.SetActive(true);
+    }
+
+    public void ActivateBottomParticles ()
+    {
+        bottomParticleSystem.SetActive(true);
     }
 }
