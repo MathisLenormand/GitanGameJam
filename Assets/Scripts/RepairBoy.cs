@@ -101,6 +101,8 @@ public class RepairBoy : MobileObjects
         doAction = DoActionVoid;
 
         currentState = null;
+
+        transform.position = new Vector3(0.6f, -0.2f, 0);
     }
 
     protected void DoActionVoid ()

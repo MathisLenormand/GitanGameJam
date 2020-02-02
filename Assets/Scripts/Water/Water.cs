@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ScriptableObjectArchitecture;
+using System;
 
 public class Water : MonoBehaviour
 {
@@ -12,11 +13,44 @@ public class Water : MonoBehaviour
     [SerializeField] private FloatReference _screenWidth;
     [SerializeField] private FloatReference _screenHeight;
 
-    private void Update()
+    private Action doAction;
+
+    private void Start()
+    {
+        SetModeVoid();
+    }
+
+    #region Mode Void
+    public void SetModeVoid()
+    {
+        doAction = DoActionVoid;
+    }
+
+    protected void DoActionVoid()
+    {
+
+    }
+    #endregion
+
+    #region Mode Normal
+    public void SetModeNormal()
+    {
+        doAction = DoActionNormal;
+
+        _waterLevel.Value = 1;
+    }
+
+    protected void DoActionNormal()
     {
         _waterHeight.Value = _waterLevel.Value * _screenHeight.Value;
         _waterHeightRelative.Value = _waterHeight.Value - _screenHeight.Value / 2;
 
-        transform.position =  new Vector3(0, _waterHeight.Value - _screenHeight.Value, 0);
+        transform.position = new Vector3(0, _waterHeight.Value - _screenHeight.Value, 0);
+    }
+    #endregion
+
+    private void Update()
+    {
+        doAction();
     }
 }

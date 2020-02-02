@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [Header("Screens")]
     [SerializeField] private Vector3Reference topRight;
     [SerializeField] private Vector3Reference bottomLeft;
+    [SerializeField] private FloatReference waterLevel;
 
     [SerializeField] private float _timeBetweenSpawn = 1f;
     private float _elapsedTime = 0f;
@@ -18,6 +19,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private CollectibleScript collectiblePrefab;
     [SerializeField] private float collectibleOffset = 1f;
     [SerializeField] private CodePourFaireFonctionnerLaBreche breachPrefab;
+    [SerializeField] private float breachOffset = 1f;
 
     private Action doAction;
 
@@ -31,6 +33,8 @@ public class LevelManager : MonoBehaviour
     public void SetModeVoid()
     {
         doAction = DoActionVoid;
+
+        ClearLevel();
     }
 
     protected void DoActionVoid()
@@ -55,6 +59,8 @@ public class LevelManager : MonoBehaviour
             _elapsedTime %= _timeBetweenSpawn;
 
             SpawnCollectible();
+
+            SpawnBreach();
         }
 
         _elapsedTime += Time.deltaTime;
@@ -67,6 +73,39 @@ public class LevelManager : MonoBehaviour
         coll.transform.position = new Vector3(Random.Range(bottomLeft.Value.x + collectibleOffset, topRight.Value.x - collectibleOffset), Random.Range(bottomLeft.Value.y + collectibleOffset, topRight.Value.y- collectibleOffset));
     }
 
+    public void SpawnBreach ()
+    {
+        float border = Random.Range(0, 3);
+
+        CodePourFaireFonctionnerLaBreche breach = Instantiate(breachPrefab, transform);
+
+        switch (border)
+        {
+            case 0:
+                breach.transform.position = new Vector3(bottomLeft.Value.x, Random.Range(bottomLeft.Value.y + breachOffset, waterLevel.Value - breachOffset));
+                breach.transform.rotation = Quaternion.AngleAxis(0, transform.up);
+                breach.ActivateSideParticles();
+                break;
+            case 1:
+                breach.transform.position = new Vector3(topRight.Value.x, Random.Range(bottomLeft.Value.y + breachOffset, waterLevel.Value - breachOffset));
+                breach.transform.rotation = Quaternion.AngleAxis(180, transform.up);
+                breach.ActivateSideParticles();
+                break;
+            case 2:
+                breach.transform.position = new Vector3(Random.Range(bottomLeft.Value.x + breachOffset, topRight.Value.y - breachOffset), bottomLeft.Value.y);
+                breach.transform.rotation = Quaternion.AngleAxis(90, transform.right);
+                breach.ActivateBottomParticles();
+                break;
+        }
+    }
+
+    private void ClearLevel ()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(transform.gameObject);
+        }
+    }
 
     private void Update()
     {
