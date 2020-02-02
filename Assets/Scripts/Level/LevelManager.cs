@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private float _timeBetweenSpawn = 1f;
     private float _elapsedTime = 0f;
+    [SerializeField] private FloatReference survivalTime;
 
     [SerializeField] private CollectibleScript collectiblePrefab;
     [SerializeField] private float collectibleOffset = 1f;
@@ -37,6 +38,7 @@ public class LevelManager : MonoBehaviour
         doAction = DoActionVoid;
 
         ClearLevel();
+
     }
 
     protected void DoActionVoid()
@@ -52,6 +54,8 @@ public class LevelManager : MonoBehaviour
         doAction = DoActionNormal;
 
         _elapsedTime = 0;
+
+        survivalTime.Value = 0;
     }
 
     protected void DoActionNormal()
@@ -66,6 +70,8 @@ public class LevelManager : MonoBehaviour
         }
 
         _elapsedTime += Time.deltaTime;
+
+        survivalTime.Value += Time.deltaTime;
     }
     #endregion
 

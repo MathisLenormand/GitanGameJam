@@ -21,5 +21,7 @@ public class UIManager : MonoBehaviour
     public void onEnd ()
     {
         gameOverScreen.SetActive(true);
+
+        gameOverScreen.GetComponent<GameOverScreen>().RefreshText();
     }
 }

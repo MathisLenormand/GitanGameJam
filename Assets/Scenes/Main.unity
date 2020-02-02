@@ -240,6 +240,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGame: {fileID: 11400000, guid: 2e8f649d46b541546ae23ab9420c8056, type: 2}
+  score:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 72e3dbe6e7774364c965ff4affae151e, type: 2}
+  text: {fileID: 1935900940}
 --- !u!114 &162364421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,7 +1866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1935900939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2151,6 +2156,12 @@ PrefabInstance:
       propertyPath: breachOffset
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7719547419417159456, guid: 266b3d6c76dfe104b8436764d5a14fb0,
+        type: 3}
+      propertyPath: survivalTime._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 72e3dbe6e7774364c965ff4affae151e,
+        type: 2}
     - target: {fileID: 7719547419417159458, guid: 266b3d6c76dfe104b8436764d5a14fb0,
         type: 3}
       propertyPath: m_Name
