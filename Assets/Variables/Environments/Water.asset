@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _friction: 0.95
   _gravity: {x: 0, y: -5, z: 0}
-  _dashPower: 10
+  _dashPower: 13

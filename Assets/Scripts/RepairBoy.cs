@@ -207,7 +207,7 @@ public class RepairBoy : MobileObjects
 
         doAction();
 
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, transform.localScale.x / 2, velocity.normalized, velocity.magnitude, bordersLayer);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, (transform.localScale.x * 0.9f) / 2, velocity.normalized, velocity.magnitude, bordersLayer);
 
         if (hit)
         {
@@ -222,7 +222,7 @@ public class RepairBoy : MobileObjects
 
         Vector3 dash = swipe.normalized * currentEnviro.DashPower;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, dash.normalized, transform.localScale.x + dash.magnitude * Time.deltaTime, bordersLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dash.normalized, transform.localScale.x * 0.9f + dash.magnitude * Time.deltaTime, bordersLayer);
 
         if (hit)
             return;
