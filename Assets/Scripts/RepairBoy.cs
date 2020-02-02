@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ScriptableObjectArchitecture;
 using System;
+using FMODUnity;
 
 public class RepairBoy : MobileObjects
 {
@@ -17,6 +18,7 @@ public class RepairBoy : MobileObjects
     [Header("States")]
     [SerializeField] private PlayerStateParameters _normalState;
     [SerializeField] private PlayerStateParameters _stuckState;
+    [SerializeField] private PlayerStateParameters _deathState;
     private PlayerStateParameters currentState;
 
     private Action doAction;
@@ -39,23 +41,26 @@ public class RepairBoy : MobileObjects
     [SerializeField] private float dashNumbers = 2;
     private float currentDashNumber = 0;
 
-    //[Header("Asphyxie")]
-    //[SerializeField] private float timeBeforeAsphyxie = 7f;
-    //private float currentTimeBeforeAsphyxie = 0;
+    [Header("Asphyxie")]
+    [SerializeField] private float timeBeforeAsphyxie = 7f;
+    private float currentTimeBeforeAsphyxie = 0;
 
     [Header("Stuck State Parameters")]
     [SerializeField] private float timeBeforeRelease = 2f;
     private float currentTimeBeforeRelease = 0f;
+
+    [Header("Game Events")]
+    [SerializeField] private GameEvent end;
 
     private float _currentMatter = 1f;
     public float CurrentMatter { 
         get { return _currentMatter; } 
         set
         {
-            if (value < MIN_MATTER)
+            /*if (value < MIN_MATTER)
             {
-                Debug.Log("Death");
-            }
+                //Debug.Log("Death");
+            }*/
 
             _currentMatter = Mathf.Clamp(value, MIN_MATTER, MAX_MATTER);
 
@@ -90,9 +95,9 @@ public class RepairBoy : MobileObjects
 
         CurrentMatter = START_MATTER;
 
-        SetModeNormal();
+        bodyMaterial = GetComponent<MeshRenderer>().material;
 
-        bodyMaterial = GetComponent<MeshRenderer>().material; 
+        SetModeVoid();
     }
 
     #region Mode Void
@@ -101,6 +106,10 @@ public class RepairBoy : MobileObjects
         doAction = DoActionVoid;
 
         currentState = null;
+
+        transform.position = new Vector3(0.6f, -0.2f, 0);
+
+        CurrentMatter = START_MATTER;
     }
 
     protected void DoActionVoid ()
@@ -148,6 +157,27 @@ public class RepairBoy : MobileObjects
     }
     #endregion
 
+    #region Mode Death
+    [ContextMenu("KILL")]
+    public void SetModeDeath()
+    {
+        doAction = DoActionDeath;
+
+        currentState = _deathState;
+
+        ResetForce();
+
+        end.Raise();
+
+        RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Death", transform.position);
+    }
+
+    protected void DoActionDeath()
+    {
+        
+    }
+    #endregion
+
     private void ScalePlayerDependingOfMatter ()
     {
         float ratio = (_currentMatter - MIN_MATTER) / deltaMatter;
@@ -168,8 +198,6 @@ public class RepairBoy : MobileObjects
 
     private void SetDangerFeedbackValue (float value)
     {
-        // ça marche pas ???
-
         bodyMaterial.SetFloat("Amount", value);
     }
 
@@ -203,6 +231,8 @@ public class RepairBoy : MobileObjects
             SetModeNormal();
 
         AddForce(swipe.normalized * currentEnviro.DashPower, true);
+
+        RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Dash_Slow", transform.position);
 
         currentDashNumber++;
 

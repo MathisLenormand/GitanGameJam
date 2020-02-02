@@ -134,6 +134,8 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: e3ebdf9bbf87e9042a5d2f75b1168a93, type: 2}
+  sideParticleSystem: {fileID: 4389468453023232712}
+  bottomParticleSystem: {fileID: 1804377931126389613}
 --- !u!50 &5918608136917612006
 Rigidbody2D:
   serializedVersion: 4
@@ -229,6 +231,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce12bf78802d5ec4fa5b29f6e1c9b98d, type: 3}
+--- !u!1 &4389468453023232712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7983079984871223814, guid: ce12bf78802d5ec4fa5b29f6e1c9b98d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5918608136704098510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4389468453023232715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7983079984871223813, guid: ce12bf78802d5ec4fa5b29f6e1c9b98d,
@@ -329,6 +337,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ca9f061eeeaa541903a03d79f705b0, type: 3}
+--- !u!1 &1804377931126389613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5415981615049897696, guid: 05ca9f061eeeaa541903a03d79f705b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 5918608138471198093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1804377931126389614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5415981615049897699, guid: 05ca9f061eeeaa541903a03d79f705b0,
