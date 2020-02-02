@@ -17,6 +17,7 @@ public class RepairBoy : MobileObjects
     [Header("States")]
     [SerializeField] private PlayerStateParameters _normalState;
     [SerializeField] private PlayerStateParameters _stuckState;
+    [SerializeField] private PlayerStateParameters _deathState;
     private PlayerStateParameters currentState;
 
     private Action doAction;
@@ -46,6 +47,9 @@ public class RepairBoy : MobileObjects
     [Header("Stuck State Parameters")]
     [SerializeField] private float timeBeforeRelease = 2f;
     private float currentTimeBeforeRelease = 0f;
+
+    [Header("Game Events")]
+    [SerializeField] private GameEvent end;
 
     private float _currentMatter = 1f;
     public float CurrentMatter { 
@@ -90,9 +94,9 @@ public class RepairBoy : MobileObjects
 
         CurrentMatter = START_MATTER;
 
-        SetModeNormal();
+        bodyMaterial = GetComponent<MeshRenderer>().material;
 
-        bodyMaterial = GetComponent<MeshRenderer>().material; 
+        SetModeVoid();
     }
 
     #region Mode Void
@@ -147,6 +151,25 @@ public class RepairBoy : MobileObjects
             SetModeNormal();
 
         currentTimeBeforeRelease += Time.deltaTime;
+    }
+    #endregion
+
+    #region Mode Death
+    [ContextMenu("KILL")]
+    public void SetModeDeath()
+    {
+        doAction = DoActionDeath;
+
+        currentState = _deathState;
+
+        ResetForce();
+
+        end.Raise();
+    }
+
+    protected void DoActionDeath()
+    {
+        
     }
     #endregion
 

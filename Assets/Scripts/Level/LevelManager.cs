@@ -103,7 +103,7 @@ public class LevelManager : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            Destroy(transform.gameObject);
+            Destroy(child.gameObject);
         }
     }
 
