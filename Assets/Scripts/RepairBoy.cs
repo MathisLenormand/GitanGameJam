@@ -39,9 +39,9 @@ public class RepairBoy : MobileObjects
     [SerializeField] private float dashNumbers = 2;
     private float currentDashNumber = 0;
 
-    //[Header("Asphyxie")]
-    //[SerializeField] private float timeBeforeAsphyxie = 7f;
-    //private float currentTimeBeforeAsphyxie = 0;
+    [Header("Asphyxie")]
+    [SerializeField] private float timeBeforeAsphyxie = 7f;
+    private float currentTimeBeforeAsphyxie = 0;
 
     [Header("Stuck State Parameters")]
     [SerializeField] private float timeBeforeRelease = 2f;
@@ -101,6 +101,8 @@ public class RepairBoy : MobileObjects
         doAction = DoActionVoid;
 
         currentState = null;
+
+        transform.position = new Vector3(0.6f, -0.2f, 0);
     }
 
     protected void DoActionVoid ()
@@ -168,8 +170,6 @@ public class RepairBoy : MobileObjects
 
     private void SetDangerFeedbackValue (float value)
     {
-        // ça marche pas ???
-
         bodyMaterial.SetFloat("Amount", value);
     }
 
