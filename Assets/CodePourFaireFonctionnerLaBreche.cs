@@ -1,3 +1,4 @@
+using FMODUnity;
 using ScriptableObjectArchitecture;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,6 +30,8 @@ public class CodePourFaireFonctionnerLaBreche : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Hit_Crack", transform.position);
+
             //collision.gameObject.GetComponent<RepairBoy>().matterlevel += mattervalue;
             Destroy(gameObject);
 

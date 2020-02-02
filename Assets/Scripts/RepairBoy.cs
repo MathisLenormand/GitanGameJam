@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ScriptableObjectArchitecture;
 using System;
+using FMODUnity;
 
 public class RepairBoy : MobileObjects
 {
@@ -107,6 +108,8 @@ public class RepairBoy : MobileObjects
         currentState = null;
 
         transform.position = new Vector3(0.6f, -0.2f, 0);
+
+        CurrentMatter = START_MATTER;
     }
 
     protected void DoActionVoid ()
@@ -165,6 +168,8 @@ public class RepairBoy : MobileObjects
         ResetForce();
 
         end.Raise();
+
+        RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Death", transform.position);
     }
 
     protected void DoActionDeath()
@@ -226,6 +231,8 @@ public class RepairBoy : MobileObjects
             SetModeNormal();
 
         AddForce(swipe.normalized * currentEnviro.DashPower, true);
+
+        RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Dash_Slow", transform.position);
 
         currentDashNumber++;
 

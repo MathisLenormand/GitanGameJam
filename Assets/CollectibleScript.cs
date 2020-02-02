@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using FMODUnity;
 using UnityEngine;
 
 public class CollectibleScript : MonoBehaviour
@@ -11,6 +10,8 @@ public class CollectibleScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Pick", transform.position);
+
             //collision.gameObject.GetComponent<RepairBoy>().matterlevel += mattervalue;
             Destroy(gameObject);
 

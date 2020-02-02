@@ -1396,7 +1396,8 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 277c60241b9bb414c9c0c96ada672480,
+    type: 2}
   _event: {fileID: 11400000, guid: 277c60241b9bb414c9c0c96ada672480, type: 2}
   _response:
     m_PersistentCalls:
@@ -1920,6 +1921,95 @@ MonoBehaviour:
     _constantValue: 0
     _variable: {fileID: 11400000, guid: dd27b079064aa6b4788e92b98278b84c, type: 2}
   respCollider: {fileID: 677427514}
+--- !u!1 &2060025403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2060025404}
+  - component: {fileID: 2060025405}
+  - component: {fileID: 2060025406}
+  - component: {fileID: 2060025407}
+  m_Layer: 0
+  m_Name: Ambience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2060025404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060025403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2060025405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060025403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SD/AMBIENCE/AMBIENCE_Level
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &2060025406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060025403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1675aeaec71151a4da1c3fa4d2723fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterLevel:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: e3ebdf9bbf87e9042a5d2f75b1168a93, type: 2}
+  trigger: {fileID: 2060025407}
+--- !u!114 &2060025407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060025403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  parameter: Water Level
+  TriggerEvent: 0
+  value: 0
 --- !u!1001 &6064662022836774585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2002,6 +2092,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 05ea4395c66fbf14e97d529c34385c83,
         type: 2}
+    - target: {fileID: 7719547419417159456, guid: 266b3d6c76dfe104b8436764d5a14fb0,
+        type: 3}
+      propertyPath: _timeBetweenSpawn
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7719547419417159457, guid: 266b3d6c76dfe104b8436764d5a14fb0,
         type: 3}
       propertyPath: _previouslyRegisteredEvent

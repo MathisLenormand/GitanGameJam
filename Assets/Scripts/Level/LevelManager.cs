@@ -1,4 +1,5 @@
-﻿using ScriptableObjectArchitecture;
+﻿using FMODUnity;
+using ScriptableObjectArchitecture;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -78,6 +79,8 @@ public class LevelManager : MonoBehaviour
         float border = Random.Range(0, 3);
 
         CodePourFaireFonctionnerLaBreche breach = Instantiate(breachPrefab, transform);
+
+        RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Wall_Crack", transform.position);
 
         switch (border)
         {
