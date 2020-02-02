@@ -39,9 +39,9 @@ public class RepairBoy : MobileObjects
     [SerializeField] private float dashNumbers = 2;
     private float currentDashNumber = 0;
 
-    //[Header("Asphyxie")]
-    //[SerializeField] private float timeBeforeAsphyxie = 7f;
-    //private float currentTimeBeforeAsphyxie = 0;
+    [Header("Asphyxie")]
+    [SerializeField] private float timeBeforeAsphyxie = 7f;
+    private float currentTimeBeforeAsphyxie = 0;
 
     [Header("Stuck State Parameters")]
     [SerializeField] private float timeBeforeRelease = 2f;

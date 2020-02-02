@@ -4,16 +4,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Random = UnityEngine.Random;
+
 public class LevelManager : MonoBehaviour
 {
     [Header("Screens")]
-    [SerializeField] private Vector3Reference topLeft;
-    [SerializeField] private Vector3Reference bottomRight;
-    [SerializeField] private FloatReference screenWidth;
-    [SerializeField] private FloatReference screenHeight;
+    [SerializeField] private Vector3Reference topRight;
+    [SerializeField] private Vector3Reference bottomLeft;
 
     [SerializeField] private float _timeBetweenSpawn = 1f;
     private float _elapsedTime = 0f;
+
+    [SerializeField] private CollectibleScript collectiblePrefab;
+    [SerializeField] private float collectibleOffset = 1f;
+    [SerializeField] private CodePourFaireFonctionnerLaBreche breachPrefab;
 
     private Action doAction;
 
@@ -23,6 +27,7 @@ public class LevelManager : MonoBehaviour
     }
 
     #region Mode Void
+    [ContextMenu("ClearLevel")]
     public void SetModeVoid()
     {
         doAction = DoActionVoid;
@@ -49,12 +54,19 @@ public class LevelManager : MonoBehaviour
         {
             _elapsedTime %= _timeBetweenSpawn;
 
-            Debug.Log("Spawn");
+            SpawnCollectible();
         }
 
         _elapsedTime += Time.deltaTime;
     }
     #endregion
+
+    public void SpawnCollectible ()
+    {
+        CollectibleScript coll = Instantiate(collectiblePrefab, transform);
+        coll.transform.position = new Vector3(Random.Range(bottomLeft.Value.x + collectibleOffset, topRight.Value.x - collectibleOffset), Random.Range(bottomLeft.Value.y + collectibleOffset, topRight.Value.y- collectibleOffset));
+    }
+
 
     private void Update()
     {
