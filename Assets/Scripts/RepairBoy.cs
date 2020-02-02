@@ -56,10 +56,10 @@ public class RepairBoy : MobileObjects
         get { return _currentMatter; } 
         set
         {
-            if (value < MIN_MATTER)
+            /*if (value < MIN_MATTER)
             {
-                Debug.Log("Death");
-            }
+                //Debug.Log("Death");
+            }*/
 
             _currentMatter = Mathf.Clamp(value, MIN_MATTER, MAX_MATTER);
 

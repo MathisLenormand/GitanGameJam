@@ -13,6 +13,9 @@ public class Water : MonoBehaviour
     [SerializeField] private FloatReference _screenWidth;
     [SerializeField] private FloatReference _screenHeight;
 
+    [SerializeField, Range(0f, 1f)] private float defeatWaterLevel = 0.1f;
+    [SerializeField] private GameEvent waterLevelTooLow;
+
     private Action doAction;
 
     private void Start()
@@ -42,6 +45,11 @@ public class Water : MonoBehaviour
 
     protected void DoActionNormal()
     {
+        if (_waterLevel.Value <= defeatWaterLevel)
+        {
+            waterLevelTooLow.Raise();
+        }
+
         _waterHeight.Value = _waterLevel.Value * _screenHeight.Value;
         _waterHeightRelative.Value = _waterHeight.Value - _screenHeight.Value / 2;
 
