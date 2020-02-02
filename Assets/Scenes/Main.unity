@@ -2009,7 +2009,7 @@ MonoBehaviour:
   CollisionTag: 
   parameter: Water Level
   TriggerEvent: 0
-  value: 0
+  value: 100
 --- !u!1001 &6064662022836774585
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,5 +12,7 @@ public class FMOD : MonoBehaviour
     private void Update()
     {
         trigger.value = waterLevel.Value * 100;
+
+        trigger.TriggerParameters();
     }
 }
