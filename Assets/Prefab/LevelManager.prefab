@@ -57,13 +57,14 @@ MonoBehaviour:
     _useConstant: 0
     _constantValue: 0
     _variable: {fileID: 11400000, guid: b2079a5831dc50b498d5559baa75263f, type: 2}
-  _timeBetweenSpawn: 1
+  _timeBetweenSpawn: 4
   collectiblePrefab: {fileID: 283023108301456385, guid: dc3e7edc5744ff445a98f8622948d66c,
     type: 3}
   collectibleOffset: 1
   breachPrefab: {fileID: 5918608136917612002, guid: b9459ba4cb99ffd40be3f1812020c0b2,
     type: 3}
-  breachOffset: 1
+  breachOffset: 2.5
+  breachBottomOffset: 4
 --- !u!114 &7719547419417159457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +82,8 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 2e8f649d46b541546ae23ab9420c8056,
+    type: 2}
   _event: {fileID: 11400000, guid: 2e8f649d46b541546ae23ab9420c8056, type: 2}
   _response:
     m_PersistentCalls:
@@ -114,7 +116,8 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 05ea4395c66fbf14e97d529c34385c83,
+    type: 2}
   _event: {fileID: 11400000, guid: 05ea4395c66fbf14e97d529c34385c83, type: 2}
   _response:
     m_PersistentCalls:

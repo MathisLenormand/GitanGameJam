@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float collectibleOffset = 1f;
     [SerializeField] private CodePourFaireFonctionnerLaBreche breachPrefab;
     [SerializeField] private float breachOffset = 1f;
+    [SerializeField] private float breachBottomOffset = 4f;
 
     private Action doAction;
 
@@ -95,7 +96,7 @@ public class LevelManager : MonoBehaviour
                 breach.ActivateSideParticles();
                 break;
             case 2:
-                breach.transform.position = new Vector3(Random.Range(bottomLeft.Value.x + breachOffset, topRight.Value.y - breachOffset), bottomLeft.Value.y);
+                breach.transform.position = new Vector3(Random.Range(bottomLeft.Value.x + breachBottomOffset, topRight.Value.y - breachBottomOffset), bottomLeft.Value.y);
                 breach.transform.rotation = Quaternion.AngleAxis(90, transform.forward);
                 breach.ActivateBottomParticles();
                 break;
