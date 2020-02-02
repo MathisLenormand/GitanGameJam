@@ -93,7 +93,7 @@ public class LevelManager : MonoBehaviour
                 break;
             case 2:
                 breach.transform.position = new Vector3(Random.Range(bottomLeft.Value.x + breachOffset, topRight.Value.y - breachOffset), bottomLeft.Value.y);
-                breach.transform.rotation = Quaternion.AngleAxis(90, transform.right);
+                breach.transform.rotation = Quaternion.AngleAxis(90, transform.forward);
                 breach.ActivateBottomParticles();
                 break;
         }

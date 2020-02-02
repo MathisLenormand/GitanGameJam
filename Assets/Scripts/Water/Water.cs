@@ -45,7 +45,7 @@ public class Water : MonoBehaviour
         _waterHeight.Value = _waterLevel.Value * _screenHeight.Value;
         _waterHeightRelative.Value = _waterHeight.Value - _screenHeight.Value / 2;
 
-        transform.position = new Vector3(0, _waterHeight.Value - _screenHeight.Value, 0);
+        transform.position = new Vector3(0, _waterHeight.Value - _screenHeight.Value, 1);
     }
     #endregion
 

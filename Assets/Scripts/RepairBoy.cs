@@ -170,8 +170,6 @@ public class RepairBoy : MobileObjects
 
     private void SetDangerFeedbackValue (float value)
     {
-        // ça marche pas ???
-
         bodyMaterial.SetFloat("Amount", value);
     }
 
