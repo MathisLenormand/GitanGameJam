@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class GameOverScreen : MonoBehaviour
 {
-    [SerializeField] private UIManager uiManager;
+    [SerializeField] private GameEvent startGame;
 
     public void OnSwipe(Vector3 swipe)
     {
-        uiManager.OnRestart();
+        gameObject.SetActive(false);
+
+        startGame.Raise();
     }
 }

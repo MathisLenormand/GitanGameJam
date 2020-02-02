@@ -13,12 +13,6 @@ public class UIManager : MonoBehaviour
         gameOverScreen.SetActive(false);
     }
 
-    public void OnRestart ()
-    {
-        startScreen.SetActive(true);
-        gameOverScreen.SetActive(false);
-    }
-
     public void OnStart ()
     {
         startScreen.SetActive(false);

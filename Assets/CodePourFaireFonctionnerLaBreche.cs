@@ -32,10 +32,17 @@ public class CodePourFaireFonctionnerLaBreche : MonoBehaviour
         {
             RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Hit_Crack", transform.position);
 
-            //collision.gameObject.GetComponent<RepairBoy>().matterlevel += mattervalue;
-            Destroy(gameObject);
+            float matter = collision.GetComponent<RepairBoy>().CurrentMatter;
 
-            collision.GetComponent<RepairBoy>().CurrentMatter -= mattervalue;
+            if (matter > 1)
+            {
+                Destroy(gameObject);
+
+                collision.GetComponent<RepairBoy>().CurrentMatter -= mattervalue;
+            }
+
+            //collision.gameObject.GetComponent<RepairBoy>().matterlevel += mattervalue;
+            
         }
     }
 
