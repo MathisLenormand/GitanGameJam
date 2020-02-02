@@ -232,7 +232,7 @@ public class RepairBoy : MobileObjects
 
         AddForce(swipe.normalized * currentEnviro.DashPower, true);
 
-        RuntimeManager.PlayOneShot("event:/SD/SFX/SFX_Dash_Slow", transform.position);
+        RuntimeManager.PlayOneShotAttached("event:/SD/SFX/SFX_Dash_Slow", gameObject);
 
         currentDashNumber++;
 
